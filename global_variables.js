@@ -1,8 +1,10 @@
 require("dotenv-vault").config();
 
+const PORT = parseInt(process.env.PORT, 10) || 10000;
+
 const config =
 {
-    PORT: parseInt(process.env.PORT),
+    PORT: PORT,
     HOSTNAME: process.env.HOSTNAME,
 
     DATABASE: process.env.MONGODB_URI,
