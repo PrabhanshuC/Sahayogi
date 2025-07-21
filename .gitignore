@@ -3,6 +3,8 @@
 .env
 node_modules
 
+Logs
+
 Documentation
 *.md
 *.pdf

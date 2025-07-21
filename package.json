@@ -29,6 +29,7 @@
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
+    "dotenv-vault": "^1.27.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
@@ -36,7 +37,7 @@
     "morgan": "^1.10.1",
     "path": "^0.12.7",
     "uuid": "^11.1.0",
-    "vercel": "^41.0.2"
+    "vercel": "^44.5.0"
   },
   "devDependencies": {
     "jest": "^30.0.4",
