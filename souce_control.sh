@@ -7,4 +7,4 @@ read commit_message
 
 git commit -m "$commit_message"
 
-git push origin dev
+git push origin main
