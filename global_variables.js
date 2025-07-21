@@ -12,9 +12,4 @@ const config =
     JWT_SECRET: process.env.JWT_SECRET_KEY
 }
 
-console.log(config.PORT)
-console.log(config.HOSTNAME)
-console.log(config.DATABASE)
-// console.log(config.)
-
 module.exports = config;
