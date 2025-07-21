@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include("./components/css") %>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Sahayogi: Registration</title>
+</head>
+<body>
+    <%- include("./components/header") %>
+
+    <main>
+        <form action="/user/register" method="post">
+            <fieldset class="fieldset">
+                <legend>Account Information</legend>
+                <div class="row">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="row">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+            </fieldset>
+
+            <fieldset class="fieldset">
+                <legend>Personal Information</legend>
+                <div class="row">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="row">
+                    <label for="name">Name</label>
+                    <input type="name" id="name" name="name">
+                </div>
+                <div class="row">
+                    <label for="about">About</label>
+                    <textarea id="about" name="about">
+                        About
+                    </textarea>
+                </div>
+            </fieldset>
+
+            <fieldset class="fieldset">
+                <legend>Work Information</legend>
+                <div class="row">
+                    <label for="github">GitHub</label>
+                    <input type="url" id="github" name="github">
+                </div>
+                <div class="row">
+                    <label for="website">Website</label>
+                    <input type="url" id="website" name="website">
+                </div>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </main>
+    
+    <%- include("./components/footer") %>
+</body>
+</html>

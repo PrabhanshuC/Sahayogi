@@ -1,4 +1,4 @@
-const Blacklist = require("../../Models/Blacklist");
+const Blacklist = require("../../models/Blacklist");
 
 const jwt = require("jsonwebtoken");
 

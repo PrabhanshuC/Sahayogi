@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <%- include("./components/css") %>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Create New Article</title>
+</head>
+<body>
+    <%- include("./components/header") %>
+
+    <main>
+        <h1>Create a New Article</h1>
+
+        <form action="/article" method="POST">
+            <div>
+                <label for="heading">Title</label>
+                <br>
+                <input type="text" id="heading" name="heading" required>
+            </div>
+            <br>
+            <div>
+                <label for="body">Content</label>
+                <br>
+                <textarea id="body" name="body" rows="10" required></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="tags">Tags</label>
+                <br>
+                <input type="text" id="tags" name="tags" placeholder="comma, separated, tags" required>
+            </div>
+            <br>
+            <button type="submit">Publish Article</button>
+        </form>
+    </main>
+    
+    <%- include("./components/footer") %>
+</body>
+</html>

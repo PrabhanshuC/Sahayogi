@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include("./components/css") %>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Account Management</title>
+</head>
+<body>
+    <%- include("./components/header") %>
+
+    <main>
+        <h1>Manage Your Account</h1>
+
+        <form action="/account" method="POST">
+            <div>
+                <label for="username">Username</label>
+                <br>
+                <input type="text" id="username" name="username" value="<%= typeof user !== 'undefined' ? user.username : '' %>" required>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="email">Email Address</label>
+                <br>
+                <input type="email" id="email" name="email" value="<%= typeof user !== 'undefined' ? user.email : '' %>" required>
+            </div>
+            
+            <br>
+            <hr>
+            <br>
+
+            <div>
+                <p>Update Password</p>
+                <label for="password">New Password</label>
+                <br>
+                <input type="password" id="password" name="password">
+                <small>Leave blank to keep current password.</small>
+            </div>
+
+            <br>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </main>
+
+    <%- include("./components/footer") %>
+
+</body>
+</html>

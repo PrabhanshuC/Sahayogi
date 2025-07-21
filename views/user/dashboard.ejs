@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <%- include("./components/css") %>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <%- include("./components/header") %>
+
+    <main>
+        <h1>Your Dashboard</h1>
+        <a href="/articles/new">Create New Article</a>
+        
+        <hr>
+
+        <h2>Your Articles</h2>
+        <% if (typeof articles !== 'undefined' && articles.length > 0) { %>
+            <div>
+                <% articles.forEach(article => { %>
+                    <!-- 4. Include Article partial for each article -->
+                    <!-- This passes the 'article' object to the partial -->
+                    <%- include("./components/article", {article: article}) %>
+                    <hr>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <p>You haven't created any articles yet.</p>
+        <% } %>
+    </main>
+    
+    <%- include("./components/footer") %>
+</body>
+</html>

@@ -1,5 +1,5 @@
-const User = require("../Models/User");
-const Blacklist = require("../Models/Blacklist");
+const User = require("../models/User");
+const Blacklist = require("../models/Blacklist");
 
 const jwt = require("jsonwebtoken");
 
@@ -25,7 +25,7 @@ const authenticate = async (request, response, next) =>
         request.user = await User.findById(payload.id).select('-password');
 
         if (!req.user)
-            return res.status(401).json({ message: "Unauthorized access" });
+            return res.status(403).json({ message: "Forbidden: Unauthorized access" });
 
         next();
     }
