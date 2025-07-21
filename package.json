@@ -22,7 +22,7 @@
     "start": "nodemon server.js",
     "run": "node server.js",
     "pretest": "eslint .",
-    "test": "jest",
+    "test": "jest --coverage",
     "posttest": "npm run clean-coverage"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "dotenv": "^17.2.0",
     "dotenv-vault": "^1.27.0",
     "ejs": "^3.1.10",
+    "eslint": "^9.31.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.4",

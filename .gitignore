@@ -8,3 +8,5 @@ Logs
 Documentation
 *.md
 *.pdf
+
+source_control.sh
