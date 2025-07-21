@@ -1,5 +1,5 @@
 const config = require("../../global_variables");
-const User = require("../../Models/User");
+const User = require("../../models/User");
 
 const { v4: uuidv4 } = require("uuid");
 const jwt = require("jsonwebtoken");

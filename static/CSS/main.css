@@ -1,0 +1,43 @@
+main
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 5rem);
+}
+
+.content
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.content-header
+{
+    font-size: 5rem;
+}
+
+.content-body
+{
+    font-size: 3rem;
+}
+
+#home
+{
+    background-image: url("/Images/banner-home.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#home .content
+{
+    height: 50%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--color-primary-light);
+    text-align: center;
+    padding: 2rem;
+    border-radius: 2rem;
+}

@@ -22,6 +22,11 @@ const Article_Schema = new Schema(
         {
             type: [String],
             required: true
+        },
+        likes:
+        {
+            type: Number,
+            default: 0
         }
     }
 );
