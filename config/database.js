@@ -7,13 +7,7 @@ const connect_db = async () =>
 {
     try
     {
-        await mongoose.connect(
-            config.DATABASE,
-            {
-                useNewUrlParser: true,
-                useUnifiedTopology: true
-            }
-        );
+        await mongoose.connect(config.DATABASE);
 
         console.log("MongoDB Connected");
     }
