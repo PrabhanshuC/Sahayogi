@@ -42,6 +42,4 @@ server.get("/", home);
 server.use("/user", require("./routes/user"));
 server.use("/article", require("./routes/article"));
 
-// server.listen(config.PORT, config.HOSTNAME, () => console.log(`Server is running at http://${config.HOSTNAME}:${config.PORT}`));
-
-module.exports = server;
+server.listen(config.PORT, config.HOSTNAME, () => console.log(`Server is running at http://${config.HOSTNAME}:${config.PORT}`));
