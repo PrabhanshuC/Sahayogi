@@ -9,6 +9,7 @@ const config = require("./global_variables");
 const server = express();
 
 server.use(express.json());
+server.use(express.urlencoded());
 server.use(express.static(path.join(__dirname, "static")));
 
 // Logging
