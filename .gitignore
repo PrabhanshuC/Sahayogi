@@ -1,11 +1,13 @@
 .gitignore
 
 .env
+.evn-keys
+
 node_modules
 
 Logs
-
 Documentation
+
 *.md
 *.pdf
 
