@@ -30,6 +30,7 @@ const connect_db = require("./config/database");
 connect_db();
 
 const home = require("./controllers/home");
+const { model } = require("mongoose");
 
 server.set("view engine", "ejs");
 server.set("views", path.join(__dirname, "views"));
@@ -41,4 +42,6 @@ server.get("/", home);
 server.use("/user", require("./routes/user"));
 server.use("/article", require("./routes/article"));
 
-server.listen(config.PORT, config.HOSTNAME, () => console.log(`Server is running at http://${config.HOSTNAME}:${config.PORT}`));
+// server.listen(config.PORT, config.HOSTNAME, () => console.log(`Server is running at http://${config.HOSTNAME}:${config.PORT}`));
+
+module.exports = server;
