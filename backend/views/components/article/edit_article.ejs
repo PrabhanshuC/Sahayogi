@@ -1,0 +1,32 @@
+<article class="content">
+    <header class="content-header">
+        <h1>Edit Your Article</h1>
+    </header>
+    
+    <form action="/articles/<%= article._id %>?_method=PUT" method="POST" class="content-body">
+        <div class="row">
+            <label for="heading">Title</label>
+        </div>
+        <div class="row">
+            <input type="text" id="heading" name="heading" value="<%= article.heading %>" required>
+        </div>
+        <div class="row">
+            <label for="body">Content</label>
+        </div>
+        <div class="row">
+            <textarea id="body" name="body" rows="10" required><%= article.body %></textarea>
+        </div>
+        <div class="row">
+            <label for="tags">Tags</label>
+        </div>
+        <div class="row">
+            <input type="text" id="tags" name="tags" value="<%= article.tags.join(', ') %>" required>
+        </div>
+    
+        <div class="row">
+            <button type="submit">Update Article</button>
+        </div>
+    </form>
+
+    <footer class="content-footer"></footer>
+</article>

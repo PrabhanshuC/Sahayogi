@@ -1,0 +1,19 @@
+<article class="content">
+    <header class="content-header">
+        <h1>Your Dashboard</h1>
+    </header>
+    
+    <a href="/articles/new">Create New Article</a>
+    
+    <h2>Your Articles</h2>
+    <% if (typeof articles !== 'undefined' && articles.length > 0) { %>
+        <div>
+            <% articles.forEach(article => { %>
+                <%- include("./components/article", {article: article}) %>
+                <hr>
+            <% }) %>
+        </div>
+    <% } else { %>
+        <p>You haven't created any articles yet.</p>
+    <% } %>
+</article>
