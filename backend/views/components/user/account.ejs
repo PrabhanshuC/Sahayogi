@@ -1,0 +1,63 @@
+<article class="content">
+    <h1>Manage Your Account</h1>
+
+    <form action="/account" method="POST">
+        <fieldset class="fieldset">
+            <legend>Account Information</legend>
+            <div class="row">
+                <label for="username">Username</label>
+            </div>
+            <div class="row">
+                <input type="text" id="username" name="username" value="<%= typeof user !== 'undefined' ? user.username : '' %>" placeholder="Username" required>
+            </div>
+            <div class="row">
+                <label for="password">Password</label>
+            </div>
+            <div class="row">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <small>Leave blank to keep current password.</small>
+            </div>
+        </fieldset>
+        <fieldset class="fieldset">
+            <legend>Personal Information</legend>
+            <div class="row">
+                <label for="email">Email</label>
+            </div>
+            <div class="row">
+                <input type="email" id="email" name="email" value="<%= typeof user !== 'undefined' ? user.email : '' %>" placeholder="Your email address" required>
+            </div>
+            <div class="row">
+                <label for="name">Name</label>
+            </div>
+            <div class="row">
+                <input type="name" id="name" name="name" value="<%= typeof user !== 'undefined' ? user.name : '' %>" placeholder="Your name">
+            </div>
+            <div class="row">
+                <label for="about">About</label>
+            </div>
+            <div class="row">
+                <textarea id="about" name="about" value="<%= typeof user !== 'undefined' ? user.about : '' %>" rows="5" placeholder="About"></textarea>
+            </div>
+        </fieldset>
+        <fieldset class="fieldset">
+            <legend>Work Information</legend>
+            <div class="row">
+                <label for="github">GitHub</label>
+            </div>
+            <div class="row">
+                <input type="url" id="github" name="github" value="<%= typeof user !== 'undefined' ? user.github : '' %>" placeholder="https://github.com/your-profile">
+            </div>
+            <div class="row">
+                <label for="website">Website</label>
+            </div>
+            <div class="row">
+                <input type="url" id="website" name="website" value="<%= typeof user !== 'undefined' ? user.website : '' %>" placeholder="your-website.tld">
+            </div>
+        </fieldset>
+
+        <div class="row">
+            <button type="submit" class="button primary">Submit</button>
+            <button type="reset" class="button secondary">Reset</button>
+        </div>
+    </form>
+</article>

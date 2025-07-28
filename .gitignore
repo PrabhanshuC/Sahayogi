@@ -1,0 +1,20 @@
+# dotenv environment variable files
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
+
+# Dependency directories
+node_modules/
+
+# Documentations
+Documentation/
+
+# Logs
+Logs/
+
+# Version Control Scripts
+initialize_git_repository.sh
+push_from_existing_repository.sh
+commit_and_push_to_repository.sh
+

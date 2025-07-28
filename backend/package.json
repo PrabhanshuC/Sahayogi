@@ -1,0 +1,46 @@
+{
+  "name": "sahayogi",
+  "version": "1.0.0",
+  "description": "An application for providing standardized how-to guides for common languages and frameworks. These are referenced directly from official documentations. Users can share edits and their own guides.",
+  "keywords": [
+    "assistance",
+    "code",
+    "completion",
+    "guides",
+    "linter",
+    "development"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PrabhanshuC/Sahayogi.git"
+  },
+  "license": "ISC",
+  "author": "Prabhanshu Chaturvedi",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "run": "node server.js",
+    "pretest": "eslint .",
+    "test": "jest --coverage",
+    "posttest": "npm run clean-coverage"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "dotenv-vault": "^1.27.0",
+    "ejs": "^3.1.10",
+    "eslint": "^9.32.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.4",
+    "morgan": "^1.10.1",
+    "path": "^0.12.7",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.0.4",
+    "nodemon": "^3.1.10"
+  }
+}

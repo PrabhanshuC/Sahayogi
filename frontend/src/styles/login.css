@@ -1,0 +1,20 @@
+#login .content
+{
+    flex-direction: column;
+    padding: 2rem;
+    border: var(--border-light);
+    border-radius: 2rem;
+}
+
+#login .content-body,
+#login .content-footer
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#login .content-footer p,
+#login .content-footer a
+{
+    font-size: 1.5rem;
+}

@@ -1,0 +1,39 @@
+#register
+{
+    height: 50%;
+}
+
+#register .content
+{
+    flex-direction: column;
+    padding: 2rem;
+    border: var(--border-light);
+    border-radius: 2rem;
+}
+
+#register .content-body
+{
+    width: 60%;
+}
+
+#register .row input, textarea
+{
+    width: 100%;
+}
+
+#register .content-footer
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#register .content-footer p,
+#register .content-footer a
+{
+    font-size: 1.5rem;
+}
+
+#register textarea
+{
+    resize: none;
+}
