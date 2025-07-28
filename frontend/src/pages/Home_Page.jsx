@@ -1,6 +1,7 @@
 import React from "react";
 
 import "../styles/home.css"
+
 import { Banner } from "../components/home/Banner";
 import { Features_Workspace } from "../components/home/Features_Workspace";
 import { Features_Sharing } from "../components/home/Features_Sharing";

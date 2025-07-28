@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import { Auth_Provider } from './context/Auth_Context';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';

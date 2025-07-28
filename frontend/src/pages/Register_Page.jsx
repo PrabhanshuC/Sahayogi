@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import "../styles/register.css";
@@ -12,8 +12,17 @@ export const Register_Page = () =>
         username: '', password: '', email: '', name: '', about: '', github: '', website: ''
     });
     const [error, set_error] = useState(null);
-    const { login } = useAuth();
+    const { user, login } = useAuth();
     const navigate = useNavigate();
+
+    useEffect(
+        () =>
+        {
+            if(user)
+                navigate('/dashboard');
+        },
+        [user, navigate]
+    );
 
     const handle_change = (e) =>
     {
@@ -98,8 +107,10 @@ export const Register_Page = () =>
                         <button type="reset" className="button secondary">Reset</button>
                     </div>
                 </form>
-                {error && <p className="error-message">{error}</p>}
-                <footer className="content-footer"><p>Already have an account? Login <Link to="/login">here</Link></p></footer>
+                <footer className="content-footer">
+                    {error && <p className="error-message">{error}</p>}
+                    <p>Already have an account? Login <Link to="/login">here</Link></p>
+                </footer>
             </article>
         </main>
     );

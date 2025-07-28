@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import "../styles/login.css"
@@ -11,22 +11,34 @@ export const Login_Page = () =>
     const [username, set_username] = useState('');
     const [password, set_password] = useState('');
     const [error, set_error] = useState(null);
-    const { login } = useAuth();
+    const { user, login } = useAuth();
     const navigate = useNavigate();
+
+    useEffect(
+        () =>
+        {
+            if(user)
+                navigate('/dashboard');
+        },
+        [user, navigate]
+    );
 
     const handle_login = async (e) =>
     {
         e.preventDefault();
         set_error(null);
+
         try
         {
             const data = await api_request('/api/auth/login', 'POST', { username, password });
+
             login(data.token);
+
             navigate('/dashboard');
         }
-        catch(err)
+        catch(error)
         {
-            set_error(err.message);
+            set_error(error.message);
         }
     };
 
@@ -72,40 +84,6 @@ export const Login_Page = () =>
                     <p>New to our platform? Create an account <Link to="/register">here</Link></p>
                 </footer>
             </article>
-            {/* <article className="content">
-                <header className="content-header">
-                    <h1>Login</h1>
-                </header>
-                <form id="login" onSubmit={handle_login} className="content-body">
-                    <div className="row">
-                        <label htmlFor="username">Username</label>
-                        <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            value={username}
-                            onChange={(e) => set_username(e.target.value)}
-                        />
-                    </div>
-                    <div className="row">
-                        <label htmlFor="password">Password</label>
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={password}
-                            onChange={(e) => set_password(e.target.value)}
-                        />
-                    </div>
-                    <div className="row">
-                        <button type="submit" className="button primary">Submit</button>
-                    </div>
-                </form>
-                {error && <p className="error-message">{error}</p>}
-                <footer className="content-footer">
-                    <p>New to our platform? Create an account <Link to="/register">here</Link></p>
-                </footer>
-            </article> */}
         </main>
     );
 };

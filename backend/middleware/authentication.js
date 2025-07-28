@@ -13,14 +13,14 @@ const authenticate = async (request, response, next) =>
         if(!token)
             return response.status(401).json({ message: "No token" });
 
-        const blacklisted = await Blacklist.findOne({ jti: payload.jti });
-
-        if(blacklisted)
-            return response.status(401).json({ message: "Invalid token" });
-
         const payload = jwt.verify(token, config.JWT_SECRET);
 
         if(!payload || !payload.jti)
+            return response.status(401).json({ message: "Invalid token" });
+
+        const blacklisted = await Blacklist.findOne({ jti: payload.jti });
+
+        if(blacklisted)
             return response.status(401).json({ message: "Invalid token" });
 
         request.user = await User.findById(payload.id).select("-password");

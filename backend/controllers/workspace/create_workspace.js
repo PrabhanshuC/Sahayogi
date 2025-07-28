@@ -4,7 +4,7 @@ const create_workspace = async (request, response) =>
 {
     try
     {
-        const { name, members } = request.body;
+        const { name } = request.body;
 
         const owner_id = request.user.id;
 
@@ -12,11 +12,7 @@ const create_workspace = async (request, response) =>
             {
                 name,
                 owner: owner_id,
-                members:
-                [
-                    { user: owner_id, role: "admin"},
-                    ...members
-                ]
+                members: [{ user: owner_id, role: 'admin' }]
             }
         );
 

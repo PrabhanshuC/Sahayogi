@@ -2,7 +2,7 @@ import React, { useState, useEffect, createContext } from "react";
 
 import { api_request } from "../api";
 
-export const Auth_Context = createContext(null);
+const Auth_Context = createContext(null);
 
 export const Auth_Provider = ({ children }) =>
 {
@@ -53,3 +53,5 @@ export const Auth_Provider = ({ children }) =>
 
     return <Auth_Context.Provider value={value}>{children}</Auth_Context.Provider>;
 };
+
+export default Auth_Context;

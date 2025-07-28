@@ -1,3 +1,5 @@
+const api_url = import.meta.env.VITE_API_URL;
+
 export const api_request =
 async (endpoint, method = "GET", body = null, token = null) =>
 {
@@ -11,7 +13,7 @@ async (endpoint, method = "GET", body = null, token = null) =>
     if (body)
         options.body = JSON.stringify(body);
     
-    const response = await fetch(`http://${import.meta.env.VITE_API_BASE_URL}${endpoint}`, options);
+    const response = await fetch(`${api_url}${endpoint}`, options);
     const data = await response.json();
 
     if (!response.ok)
