@@ -3,7 +3,7 @@ import React from "react";
 export const Features_Workspace = () =>
 {
     return (
-        <section className="page-section">
+        <div className="page-section">
             <article className="content">
                 <header className="content-header">
                     <h2>Collaborate in Workspaces</h2>
@@ -17,6 +17,6 @@ export const Features_Workspace = () =>
                     </figure>
                 </div>
             </article>
-        </section>
+        </div>
     );
 };

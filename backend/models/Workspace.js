@@ -13,15 +13,6 @@ const Workspace_Schema = new Schema(
             ref: "User",
             required: true
         },
-        resources:
-        [{
-            resource:
-            {
-                type: Schema.Types.ObjectId,
-                ref: "Resource",
-                required: true
-            }
-        }],
         members:
         [{
             user:

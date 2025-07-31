@@ -4,7 +4,7 @@ const get_workspaces = async (request, response) =>
 {
     try
     {
-        const workspaces = await Workspace.find({ "members.user": request.params.id });
+        const workspaces = await Workspace.find({ "members.user": request.user.id });
 
         response.status(200).json({ workspaces });
     }

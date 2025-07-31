@@ -15,12 +15,12 @@ const update_resource = async (request, response) =>
         } = request.body;
 
         const resource = await Resource.findOneAndUpdate(
-            { _id: request.params.id, owner: request.user.id },
+            { _id: request.params.id, author: request.user.id },
             {
                 title,
                 type,
                 content,
-                owner: request.user.id,
+                author: request.user.id,
                 tags,
                 workspace,
                 isPublic

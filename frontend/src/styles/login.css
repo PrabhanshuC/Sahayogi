@@ -1,7 +1,6 @@
 #login .content
 {
-    flex-direction: column;
-    padding: 2rem;
+    width: 50%;
     border: var(--border);
     border-radius: 2rem;
 }
@@ -11,6 +10,22 @@
 {
     display: flex;
     flex-direction: column;
+}
+
+#login .content-body
+{
+    width: 80%;
+}
+
+#login .row
+{
+    width: 90%;
+    margin: auto;
+}
+
+#login .row input
+{
+    width: 100%;
 }
 
 #login .content-footer p,

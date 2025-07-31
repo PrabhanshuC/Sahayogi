@@ -98,6 +98,12 @@ body
     background-color: light-dark(var(--color-primary-light), var(--color-primary-dark));
 }
 
+ul,
+ol
+{
+    list-style-position: inside;
+}
+
 a,
 a:active,
 a:visited

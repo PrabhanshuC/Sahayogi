@@ -1,0 +1,78 @@
+/* .page-section is the new, reusable class for all full-width content blocks.
+  It provides consistent vertical spacing and centers the content.
+*/
+.page-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 8rem 4rem; /* Added generous vertical padding for spacing */
+}
+
+/* Add a subtle background color to every even-numbered section for visual separation */
+.page-section:nth-of-type(even) {
+    background-color: light-dark(rgba(0,0,0,0.05), rgba(255,255,255,0.05));
+}
+
+/* This reuses your existing .content class but scopes it within a .page-section 
+  to create the two-column (text/image) layout.
+*/
+.page-section .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.page-section .text-content {
+    flex: 1;
+}
+
+.page-section .image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-section .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2rem;
+}
+
+.page-section h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.page-section p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+
+/* Special modifier class for the main banner to override default styles
+  and add the background image.
+*/
+.banner-section {
+    min-height: calc(80vh - 10rem);
+    text-align: center;
+    background-image: url("https://placehold.co/1920x1080/1a202c/ffffff?text=Sahayogi");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 4rem; /* Override default padding */
+}
+
+.banner-section .content {
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.5);
+    padding: 4rem;
+    border-radius: 2rem;
+}
+
+.banner-section h2,
+.banner-section p {
+    color: white;
+}

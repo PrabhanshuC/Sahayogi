@@ -11,7 +11,6 @@ export const Footer = () =>
                 <nav>
                     <div>
                         <Link to="/">Home</Link>
-                        <Link to="/articles">Articles</Link>
                         <Link to="/guides">Guides</Link>
                         <Link to="/pathways">Pathways</Link>
                     </div>

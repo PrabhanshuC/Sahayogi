@@ -5,15 +5,14 @@
 
 #register .content
 {
-    flex-direction: column;
-    padding: 2rem;
+    width: 50%;
     border: var(--border);
     border-radius: 2rem;
 }
 
 #register .content-body
 {
-    width: 60%;
+    width: 80%;
 }
 
 #register .row input, textarea

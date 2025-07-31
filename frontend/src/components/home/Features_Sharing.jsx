@@ -3,7 +3,7 @@ import React from "react";
 export const Features_Sharing = () =>
 {
     return (
-        <section className="page-section">
+        <div className="page-section">
             <article className="content">
                 <header className="content-header">
                     <h2>Organize & Share Resources</h2>
@@ -17,6 +17,6 @@ export const Features_Sharing = () =>
                     </figure>
                 </div>
             </article>
-        </section>
+        </div>
     )
 };

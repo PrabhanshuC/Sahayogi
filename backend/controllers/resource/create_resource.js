@@ -20,7 +20,7 @@ const create_resource = async (request, response) =>
                 title,
                 type,
                 content,
-                owner: owner_id,
+                author: owner_id,
                 tags,
                 workspace: workspace_id,
                 isPublic

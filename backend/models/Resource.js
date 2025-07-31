@@ -18,7 +18,7 @@ const Resource_Schema = new Schema(
             type: String,
             default: ''
         },
-        owner:
+        author:
         {
             type: Schema.Types.ObjectId,
             ref: "User",
@@ -27,6 +27,13 @@ const Resource_Schema = new Schema(
         tags:
         {
             type: [String]
+        },
+        workspace:
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Workspace",
+            required: true,
+            index: true
         },
         members:
         [{

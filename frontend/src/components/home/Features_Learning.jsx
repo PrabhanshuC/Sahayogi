@@ -3,7 +3,7 @@ import React from "react";
 export const Features_Learning = () =>
 {
     return (
-        <section className="page-section">
+        <div className="page-section">
             <article className="content">
                 <header className="content-header">
                     <h2>Learn from Curated Guides</h2>
@@ -17,6 +17,6 @@ export const Features_Learning = () =>
                     </figure>
                 </div>
             </article>
-        </section>
+        </div>
     )
 };

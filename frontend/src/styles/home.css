@@ -7,7 +7,6 @@
 
 #home .content
 {
-    flex-direction: column;
     justify-content: space-evenly;
     height: 50%;
     width: 80%;
