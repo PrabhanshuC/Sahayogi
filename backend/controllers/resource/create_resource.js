@@ -4,7 +4,7 @@ const create_resource = async (request, response) =>
 {
     try
     {
-        const { workspace_id } = request.params;
+        const workspace_id = request.params.id;
         const owner_id = request.user.id;
         const
         {
@@ -14,6 +14,9 @@ const create_resource = async (request, response) =>
             tags,
             isPublic
         } = request.body;
+
+        if (!workspace_id)
+            return response.status(400).json({ message: "Workspace ID is missing from the request URL." });
 
         const resource = new Resource(
             {
@@ -34,7 +37,6 @@ const create_resource = async (request, response) =>
     catch(error)
     {
         console.error(error.message);
-
         response.status(500).json({ message: "Internal server error" });
     }
 }

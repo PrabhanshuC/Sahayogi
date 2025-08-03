@@ -4,17 +4,16 @@ const get_resources = async (request, response) =>
 {
     try
     {
-        const resource = await Resource.find({ _id: request.params.id, author: request.user.id });
+        const workspace_id = request.params.id;
 
-        if(!resource)
-            return response.status(404).json({ message: "Not found" });
+        const resources = await Resource.find({ workspace: workspace_id });
 
-        response.status(200).json({ resource });
+        response.status(200).json({ resources });
     }
     catch(error)
     {
         console.error(error.message);
-
+        
         response.status(500).json({ message: "Internal server error" });
     }
 }

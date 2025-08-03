@@ -26,7 +26,7 @@ const authenticate = async (request, response, next) =>
         request.user = await User.findById(payload.id).select("-password");
 
         if (!request.user)
-            return res.status(403).json({ message: "Forbidden: Unauthorized access" });
+            return response.status(403).json({ message: "Forbidden: Unauthorized access" });
 
         if (request.user.status !== "active")
             return response.status(403).json({ message: `Forbidden: This account is currently ${request.user.status}.` });

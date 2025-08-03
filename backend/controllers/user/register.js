@@ -28,7 +28,7 @@ const register = async (request, response) =>
 
         const hashed_password = await bcrypt.hash(password, 10);
         
-        const user = new User(
+        let user = new User(
             {
                 username,
                 password:hashed_password,
@@ -39,6 +39,8 @@ const register = async (request, response) =>
                 website
             }
         );
+
+        await user.save();
 
         const private_workspace = new Workspace({
             name: `${username}'s Private Workspace`,

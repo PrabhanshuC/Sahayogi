@@ -28,8 +28,8 @@ router.delete("/:id", authenticate, authorize_workspace("admin"), delete_workspa
 
 // Member Management Routes
 router.post("/:id/members", authenticate, authorize_workspace("admin"), add_member);
-router.put("/:id/members/:memberId", authenticate, authorize_workspace("admin"), update_member_role);
-router.delete("/:id/members/:memberId", authenticate, authorize_workspace("admin"), remove_member);
+router.put("/:id/members/:member_id", authenticate, authorize_workspace("admin"), update_member_role);
+router.delete("/:id/members/:member_id", authenticate, authorize_workspace("admin"), remove_member);
 
 // Resources in a Workspace Routes
 router.get("/:id/resources", authenticate, authorize_workspace("viewer"), get_resources_in_workspace);

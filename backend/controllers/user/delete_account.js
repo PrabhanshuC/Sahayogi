@@ -11,16 +11,15 @@ const request_account_deletion = async (request, response) =>
 {
     try
     {
-        const { deleteContent } = request.body; // Expecting { "deleteContent": boolean }
+        const { delete_content } = request.body; // Expecting { "deleteContent": boolean }
         const user_id = request.user.id;
         const user = await User.findById(user_id);
 
         if (!user)
             return response.status(404).json({ message: "User not found" });
 
-        if (deleteContent === true)
+        if (delete_content === true)
         {
-            // Logic for PERMANENT DELETION
             const deletion_date = new Date();
         
             deletion_date.setDate(deletion_date.getDate() + 30);
@@ -30,7 +29,8 @@ const request_account_deletion = async (request, response) =>
 
             await user.save();
 
-            // Log the user out immediately by blacklisting their token
+            const token = request.header("Authorization")?.split(" ")[1];
+            
             revoke_status = await revoke_token(token);
 
             if(revoke_status.status !== 200)
@@ -40,11 +40,9 @@ const request_account_deletion = async (request, response) =>
         }
         else
         {
-            // --- Logic for DEACTIVATION (Soft Delete) ---
             user.status = "deactivated";
             await user.save();
             
-            // Log the user out immediately
             revoke_status = await revoke_token(token);
 
             if(revoke_status.status !== 200)

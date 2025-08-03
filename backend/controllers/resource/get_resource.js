@@ -4,7 +4,7 @@ const get_resource = async (request, response) =>
 {
     try
     {
-        const resource = await Resource.findOne({ _id: request.params.id, author: request.user.id });
+        const resource = await Resource.findById(request.params.id);
 
         if(!resource)
             return response.status(404).json({ message: "Not found" });

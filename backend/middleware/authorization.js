@@ -69,7 +69,7 @@ const authorize_resource = (required_role) =>
             }
 
             // Workspace-Level Access Check (Fallback)
-            const workspace = await Workspace.findById(Resource.workspace);
+            const workspace = await Workspace.findById(resource.workspace);
 
             if (!workspace)
                 return response.status(404).json({ message: "Parent workspace not found" });
@@ -97,7 +97,7 @@ const authorize_resource = (required_role) =>
 
 const authorize_website_admin = (request, response, next) =>
 {
-    if (request.user && request.user.role === "admin")
+    if (request.user && request.user.website_role === "admin")
         next();
     else
         response.status(403).json({ message: "Forbidden: This action requires site administrator privileges." });

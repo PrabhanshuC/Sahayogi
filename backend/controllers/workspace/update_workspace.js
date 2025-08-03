@@ -4,11 +4,11 @@ const update_workspace = async (request, response) =>
 {
     try
     {
-        const { name, members } = request.body;
+        const { name } = request.body;
 
         const updated_workspace = await Workspace.findByIdAndUpdate(
             request.params.id,
-            { name, members },
+            { name },
             { new: true }
         );
 

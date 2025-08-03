@@ -15,5 +15,3 @@ createRoot(document.getElementById("root")).render(
 );
 
 // dashboard should include all current user workspace, account management, resource / workspace history and saved resources.
-
-// header should include a search bar instead of Articles link.

@@ -1,7 +1,6 @@
 const api_url = import.meta.env.VITE_API_URL;
 
-export const api_request =
-async (endpoint, method = "GET", body = null, token = null) =>
+export const api_request = async (endpoint, method = "GET", body = null, token = null) =>
 {
     const headers = { "Content-Type": "application/json" };
 

@@ -52,7 +52,7 @@ const add_member = async (request, response) =>
 
 /**
  * @desc    Update a member's role in a workspace
- * @route   PUT /api/workspaces/:id/members/:memberId
+ * @route   PUT /api/workspaces/:id/members/:member_id
  * @access  Private (Workspace Admin)
  */
 const update_member_role = async (request, response) =>
@@ -60,7 +60,7 @@ const update_member_role = async (request, response) =>
     try
     {
         const { role } = request.body;
-        const { workspace_id, member_id } = request.params;
+        const { id: workspace_id, member_id: member_id } = request.params;
 
         const workspace = await Workspace.findById(workspace_id);
         
@@ -99,12 +99,12 @@ const update_member_role = async (request, response) =>
 
 /**
  * @desc    Remove a member from a workspace
- * @route   DELETE /api/workspaces/:id/members/:memberId
+ * @route   DELETE /api/workspaces/:id/members/:member_id
  * @access  Private (Workspace Admin)
  */
 const remove_member = async (request, response) => {
     try {
-        const { workspace_id, member_id } = request.params;
+        const { id: workspace_id, member_id: member_id } = request.params;
 
         const workspace = await Workspace.findById(workspace_id);
         

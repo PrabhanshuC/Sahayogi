@@ -10,10 +10,12 @@ import { Register_Page } from './pages/Register_Page';
 import { Account_Page } from './pages/Account_Page';
 import { Dashboard_Page } from './pages/Dashboard_Page';
 import { Workspace_Page } from './pages/Workspace_Page';
+import { Resource_Page } from './pages/Resource_Page';
 import { Admin_Dashboard_Page } from './pages/Admin_Dashboard_Page';
 import { Protected_Route } from './components/auth/Protected_Route';
 
-export const App = () => {
+export const App = () =>
+{
     return (
         <Auth_Provider>
             <BrowserRouter>
@@ -29,6 +31,7 @@ export const App = () => {
                         <Route path="/account" element={<Protected_Route><Account_Page /></Protected_Route>} />
                         <Route path="/dashboard" element={<Protected_Route><Dashboard_Page /></Protected_Route>} />
                         <Route path="/workspaces/:id" element={<Protected_Route><Workspace_Page /></Protected_Route>} />
+                        <Route path="/resources/:id" element={<Protected_Route><Resource_Page /></Protected_Route>} />
                         
                         {/* Protected Admin Routes */}
                         <Route path="/admin/dashboard" element={
@@ -43,5 +46,4 @@ export const App = () => {
         </Auth_Provider>
     );
 }
-
 export default App;

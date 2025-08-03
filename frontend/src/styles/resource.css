@@ -1,0 +1,44 @@
+.resource-page-layout
+{
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem;
+    margin: 4rem auto;
+}
+
+.resource-header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: var(--border);
+    margin-bottom: 2rem;
+}
+
+.resource-header h1
+{
+    font-size: 4rem;
+}
+
+.resource-actions
+{
+    display: flex;
+    gap: 1rem;
+}
+
+.resource-content-display
+{
+    font-size: 1.8rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+.resource-footer
+{
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: var(--border);
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+}

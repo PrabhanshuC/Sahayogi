@@ -42,6 +42,7 @@ const update_user_status = async (request, response) =>
     catch(error)
     {
         console.error(error.message);
+        
         response.status(500).json({ message: "Server Error" });
     }
 };
