@@ -15,6 +15,24 @@ server.use(express.static(path.join(__dirname, "static")));
 // Logging
 server.use(morgan("dev"));
 
+const api_limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
+    message: "Too many requests from this IP, please try again after 15 minutes",
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+// Authentication Rate Limiter (More Strict)
+// Allows 5 requests per IP per 5 minutes for login/registration
+const auth_limiter = rateLimit({
+    windowMs: 5 * 60 * 1000, // 5 minutes
+    max: 5, // Limit each IP to 5 requests per windowMs
+    message: "Too many login/registration attempts from this IP, please try again after 5 minutes",
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
 // CORS
 const cors = require("cors");
 
@@ -30,6 +48,15 @@ server.use(cors(options));
 const connect_db = require("./config/database");
 
 connect_db();
+
+// Rate limiting
+
+// Rate limiting for every route
+server.use("/api/", api_limiter);
+
+// Rate limiting for /auth routes
+server.use("/api/auth/login", auth_limiter);
+server.use("/api/auth/register", auth_limiter);
 
 // Routes
 
