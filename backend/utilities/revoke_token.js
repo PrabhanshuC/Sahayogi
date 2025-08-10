@@ -1,5 +1,6 @@
-const Blacklist = require("../models/Blacklist");
 const jwt = require("jsonwebtoken");
+
+const Blacklist = require("../models/Blacklist");
 
 /**
  * @desc    Decodes a JWT and adds its JTI to the blacklist.

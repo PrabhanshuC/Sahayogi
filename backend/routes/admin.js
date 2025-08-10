@@ -2,24 +2,23 @@ const express = require("express");
 const router = express.Router();
 
 // Middleware Imports
-const authenticate = require("../middleware/authentication");
-const { authorize_website_admin } = require("../middleware/authorization");
+const authenticator = require("../middlewares/authentication");
+const { authorize_admin } = require("../middlewares/authorization");
 
 // Controller Imports
 const get_all_users = require("../controllers/admin/get_all_users");
-const update_user_status = require("../controllers/admin/update_user_status");
+const get_user_articles = require("../controllers/admin/get_user_articles");
 const delete_user = require("../controllers/admin/delete_user");
 
-// Apply middleware to all routes in this file
-router.use(authenticate, authorize_website_admin);
-
-// Site Admin API Routes
-router.get("/users", get_all_users);
-router.put("/users/:id", update_user_status);
-router.delete("/users/:id", delete_user)
-
 // Admin Routes
-// router.get("/users", get_all_users);
-// router.put("/users/:id/status", update_user_status);
+
+// Handles GET /api/admin/users
+router.get("/users", authenticator, authorize_admin, get_all_users);
+
+// Handles GET /api/admin/users/:id/articles
+router.get("/users/:id/articles", authenticator, authorize_admin, get_user_articles);
+
+// Handles DELETE /api/admin/users/:id
+router.delete("/users/:id", authenticator, authorize_admin, delete_user);
 
 module.exports = router;

@@ -8,10 +8,10 @@
 node_modules/
 
 # Documentations
-Documentations/
+Documentation/
 
 # Logs
-Logs
+Logs/
 
 # Version Control Scripts
 initialize_git_repository.sh

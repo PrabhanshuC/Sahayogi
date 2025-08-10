@@ -4,6 +4,9 @@
 !.env.project
 !.env.vault
 
+# Test Frontend
+test-frontend/
+
 # Dependency directories
 node_modules/
 

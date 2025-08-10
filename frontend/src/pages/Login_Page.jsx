@@ -1,14 +1,17 @@
-import React from "react";
+import React from 'react';
+import { Container, Paper } from '@mui/material';
 
-import "../styles/login.css"
+import { Login_Form } from '../components/auth/Login_Form';
 
-import { Login_Form } from "../components/user/Login_Form";
-
-export const Login_Page = () =>
+const Login_Page = () =>
 {
     return (
-        <main id="login">
-            <Login_Form />
-        </main>
+        <Container maxWidth="sm">
+            <Paper elevation={6} sx={{ p: { xs: 2, md: 4 }, mt: 5, borderRadius: 2 }}>
+                <Login_Form />
+            </Paper>
+        </Container>
     );
 };
+
+export default Login_Page;

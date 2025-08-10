@@ -9,6 +9,7 @@ const config =
 
     FRONTEND: process.env.FRONTEND,
     DATABASE: process.env.MONGODB_URI,
+    ANONYMOUS: process.env.ANONYMOUS_USER_ID,
 
     JWT_SECRET: process.env.JWT_SECRET_KEY
 }

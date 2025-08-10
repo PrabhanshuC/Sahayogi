@@ -2,18 +2,15 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 
 import { useAuth } from "../../hooks/useAuth";
+import { Loading } from "../feedback/Loading"; // Corrected import path
 
-export const Protected_Route = ({ children, required_role }) =>
+export const Protected_Route = ({ children }) =>
 {
-    const { user, token } = useAuth();
+    const { user, loading } = useAuth();
 
-    if (!user && token) return <main><p>Loading...</p></main>;
+    if (loading) return <Loading message="Authenticating..." />;
 
-    if (!user)
-        return <Navigate to="/login" />;
-
-    if (required_role && user.website_role !== required_role)
-        return <Navigate to="/dashboard" />;
+    if (!user) return <Navigate to="/login" />;
 
     return children;
 };
