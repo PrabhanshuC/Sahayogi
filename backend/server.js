@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require("path");
+const rate_limit = require("express-rate-limit");
 const morgan = require("morgan");
 
 // Global variables
@@ -10,12 +10,11 @@ const server = express();
 
 server.use(express.json());
 server.use(express.urlencoded());
-server.use(express.static(path.join(__dirname, "static")));
 
 // Logging
 server.use(morgan("dev"));
 
-const api_limiter = rateLimit({
+const api_limiter = rate_limit({
     windowMs: 15 * 60 * 1000,
     max: 100,
     message: "Too many requests from this IP, please try again after 15 minutes",
@@ -25,7 +24,7 @@ const api_limiter = rateLimit({
 
 // Authentication Rate Limiter (More Strict)
 // Allows 5 requests per IP per 5 minutes for login/registration
-const auth_limiter = rateLimit({
+const auth_limiter = rate_limit({
     windowMs: 5 * 60 * 1000, // 5 minutes
     max: 5, // Limit each IP to 5 requests per windowMs
     message: "Too many login/registration attempts from this IP, please try again after 5 minutes",
